@@ -63,6 +63,16 @@ export class AppComponent implements OnInit {
     })
   }
 
+  progressTodo(todo:ToDo){
+    todo.status = 'In-Progress'
+    this.todoService.editTodo(todo).subscribe(res => {
+      console.log('Update Succesful')
+    }, err => {
+      this.editTodo(todo)
+      console.error('Update Unsuccesful')
+    })
+  }
+
   submitTodo(event, todo:ToDo){
     if(event.keyCode ==13){
       this.editTodo(todo)

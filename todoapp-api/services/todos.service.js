@@ -1,13 +1,27 @@
+/*
+Using async-await feature introduced in NodeJS 7.6.
+- Can handle both synchronous and asynchronous errors with try/catch
+- Conditionals are easier
+- Concise and Clean
+
+services to access the Mongoose Models
+*/
+
+//get mongoose model
 var ToDo = require('../models/todo.model')
 
 _this = this
 
-
+//async function to get the ToDo list
 exports.getTodos = async function(query, page, limit){
+
+    //options setup for the mongoose paginate
     var options = {
         page,
         limit
     }
+
+    //try-catch handle errors
     try {
         var todos = await ToDo.paginate(query, options)
         return todos;
@@ -16,6 +30,7 @@ exports.getTodos = async function(query, page, limit){
     }
 }
 
+//create a new mongoose object
 exports.createTodo = async function(todo){
     var newTodo = new ToDo({
         title: todo.title,
@@ -36,17 +51,20 @@ exports.updateTodo = async function(todo){
     var id = todo.id
 
     try{
+        //find by Id
         var oldTodo = await ToDo.findById(id);
     }catch(e){
         throw Error("Error occured while Finding the Todo")
     }
 
+    //if it doesn't exist
     if(!oldTodo){
         return false;
     }
 
     console.log(oldTodo)
 
+    //edit the todo object
     oldTodo.title = todo.title
     oldTodo.description = todo.description
     oldTodo.status = todo.status
@@ -62,6 +80,7 @@ exports.updateTodo = async function(todo){
     }
 }
 
+//delete the todo object
 exports.deleteTodo = async function(id){
 
     try{

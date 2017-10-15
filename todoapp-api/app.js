@@ -5,11 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//use routes
 var index = require('./routes/index.route');
 var users = require('./routes/users.route');
-var api = require('./routes/api.route')
+var api = require('./routes/api.route'); //get the api route
 
-var bluebird = require('bluebird')
+var bluebird = require('bluebird');
 
 
 var app = express();

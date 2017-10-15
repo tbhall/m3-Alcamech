@@ -8,7 +8,7 @@
           <tr class="h">
             <th class="h">Title</th>
             <th class="h">Description</th>
-            <th class="h">Date</th>
+            <th class="h">Due Date</th>
             <th class="h">Status</th>
             <th class="h">Options</th>
           </tr>
@@ -54,20 +54,31 @@
     <form>
       <div class="form-row">
 
-        <div class="col-md-5">
+        <div class="col-md-3">
           <input type="text" name="title" id="title" [(ngModel)]="newTodo.title" placeholder="Title" class="form-control">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-3">
           <input name="description" id="description" [(ngModel)]="newTodo.description" placeholder="Description" class="form-control"
             id="description">
         </div>
-        <div class="col-md-2">
-          <button type="submit" class="btn btn-primary" (click)="create()">Add</button>
-        </div>
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+                name="date" id="date" [(ngModel)]="newTodo.date" ngbDatepicker #d="ngbDatepicker">
+                <button class="input-group-addon" (click)="d.toggle()" type="button">
+                  <i class="fa fa-calendar fa-2" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+       </form>
+      <div class="col-md-2">
+          <button type="submit" class="btn btn-success" (click)="create()">Create</button>
+      </div>
       </div>
     </form>
   </div>
   <div class="col-md-2">
-    
+
   </div>
 </div>

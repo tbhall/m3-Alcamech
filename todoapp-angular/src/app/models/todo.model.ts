@@ -2,14 +2,14 @@ class ToDo {
     _id:string;
     title: string;
     description: string;
-    date: Date;
+    date: string;
     status: string;
 
     constructor(
     ){
         this.title = ""
         this.description = ""
-        this.date = new Date()
+        this.date = ""
         this.status = ""
     }
 }

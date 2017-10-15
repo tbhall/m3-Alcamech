@@ -17,11 +17,10 @@ exports.getTodos = async function(query, page, limit){
 }
 
 exports.createTodo = async function(todo){
-
     var newTodo = new ToDo({
         title: todo.title,
         description: todo.description,
-        date: new Date(),
+        date: new Date(todo.date.year, todo.date.month-1, todo.date.day),
         status: todo.status
     })
 
@@ -64,7 +63,7 @@ exports.updateTodo = async function(todo){
 }
 
 exports.deleteTodo = async function(id){
-    
+
     try{
         var deleted = await ToDo.remove({_id: id})
         if(deleted.result.n === 0){

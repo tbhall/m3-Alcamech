@@ -1,4 +1,8 @@
-# m3-Alcamech
+# m3-Alcamech todoapp
+
+Simple todoapp to practice and learn Model–View–Controller (MVC) software architectural pattern, Basic CRUD functionality ( Create, Read, Update, Delete ) and REST API.
+Back-End made with NodeJS, ExpressJS and MongoDB (with Mongoose and Bluebird)
+Front-End made with Angular 4, bootstrap, ng-boostrap, font-awesome (icons)
 
 ## Architecture (todoapp-api)
   - Data — This Layer is the MongoDB Models or Mongoose Models

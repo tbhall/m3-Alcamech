@@ -1,5 +1,11 @@
 # m3-Alcamech
 
+## Architecture
+  - Data — This Layer is the MongoDB Models or Mongoose Models
+  - Services — This layer is going to execute atomic CRUD operations on the models
+  - Controller — This Layer is going to control the request body parsing, validating, checking , responding and Error returning actions.
+  - API — This layer is a very simple mapping layer. Where specific api endpoints will be mapped to the Controller Functions.
+
 ## Database Setup
 
 Download and install MongoDB.

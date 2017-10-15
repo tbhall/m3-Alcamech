@@ -13,7 +13,7 @@ var bluebird = require('bluebird')
 
 
 var app = express();
-
+// Add mongoose support, Bluebird Promise Library
 var mongoose = require('mongoose')
 mongoose.Promise = bluebird
 mongoose.connect('mongodb://127.0.0.1:27017/todoapp', { useMongoClient: true})

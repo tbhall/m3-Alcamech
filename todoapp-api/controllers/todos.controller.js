@@ -2,6 +2,12 @@ var TodoService = require('../services/todos.service')
 
 _this = this
 
+/*
+Using async-await feature introduced in NodeJS 7.6.
+- Can handle both synchronous and asynchronous errors with try/catch
+- Conditionals are easier
+- Concise and Clean
+*/
 
 exports.getTodos = async function(req, res, next){
 

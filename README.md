@@ -34,3 +34,6 @@ Run `npm install` to install all the dependencies.
 Run `ng serve` to run the NG Development Server.
 
 Go to `http://localhost:4200`
+
+## Acknowledgements 
+
